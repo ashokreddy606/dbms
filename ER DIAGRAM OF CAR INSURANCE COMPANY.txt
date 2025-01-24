@@ -1,0 +1,26 @@
+
+Exercise:
+
+1. Construct an E-R diagram for a car-insurance company whose customers own one or more cars
+   each. Each car has associated with it zero to any number of recorded accidents.
+
+Solution:
+
++-------------+      Owns      +----------+      InvolvedIn     +-----------+
+|  Customer  |---------------->|   Car    |-------------------->|  Accident |
++-------------+                +----------+                     +-----------+
+| CustomerID  |                | CarID    |                     | AccidentID|
+| Name        |                | License  |                     | Date      |
+| Address     |                | Make     |                     | Description|
+| Phone       |                | Model    |                     | Damage    |
++-------------+                | Year     |                     +-----------+
+                               +----------+  
+                                 |
+                                 |  
+                          +--------------------+
+                          |   Car_Accident     |
+                          +--------------------+
+                          | CarID (FK)         |
+                          | AccidentID (FK)    |
+                          | Severity (optional)|
+                          +--------------------+
